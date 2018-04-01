@@ -1,7 +1,6 @@
-<html>
-    <p>Hi there!</p>
-    <p>It works!</p>
-</html>
+
+
+
 <html>
     <head>
         <title>Создание первого сайта</title>
@@ -11,16 +10,19 @@
             <h1><a href="/">Создание первого сайта</a></h1>
         </div>
 
-        <div>
-            <p>published: 31.03.2018, 03:14</p>
-            <h2><a href="">Первый блог</a></h2>
-            <p>Пока пустой, к сожалению ...</p>
-        </div>
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
+
 
         <div>
-            <p>published: 31.03.2018, 03:19</p>
-            <h2><a href="">Второй блог</a></h2>
-            <p>То же самое ... </p>
+            <p>published: 01.04.2018, 08:00</p>
+            <h2><a href="">My second post</a></h2>
+            <p>Пока еще просто пусто...</p>
         </div>
     </body>
 </html>
